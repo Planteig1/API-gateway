@@ -187,7 +187,7 @@ This API Gateway serves as an intermediary for various microservices in a hotel 
         ```json
         {
             "room_type": "Suite",
-            "season": "low,
+            "season": "low",
             "daily_price": 1500
         }
         ```
