@@ -37,7 +37,11 @@ This API Gateway serves as an intermediary for various microservices in a hotel 
     - **Description**: Adds a new guest.
     - **Request Body**:
         ```json
-        {}
+         {
+        "first_name": "Lucas",
+        "last_name": "Tofft",
+        "country": "Sweden"
+        }
         ```
     - **Response**:
         - `201 Created`: Guest added successfully.
@@ -48,7 +52,11 @@ This API Gateway serves as an intermediary for various microservices in a hotel 
     - **Description**: Updates guest information by ID.
     - **Request Body**:
         ```json
-        {}
+        {
+        "first_name": "Lucas",
+        "last_name": "Tofft",
+        "country": "Sweden"
+        }
         ```
     - **Response**:
         - `200 OK`: Guest information updated.
@@ -82,8 +90,13 @@ This API Gateway serves as an intermediary for various microservices in a hotel 
     - **Description**: Creates a new bill.
     - **Request Body**:
         ```json
-        {}
+        {
+        "guestId": 1,
+        "item": "Coffee",
+        "price": 10
+        }
         ```
+  
     - **Response**:
         - `201 Created`: Bill created successfully.
 
@@ -107,7 +120,9 @@ This API Gateway serves as an intermediary for various microservices in a hotel 
     - **Description**: Updates bill details by ID.
     - **Request Body**:
         ```json
-        {}
+        {
+        "paid_status": True
+        }
         ```
     - **Response**:
         - `200 OK`: Bill updated.
@@ -127,7 +142,16 @@ This API Gateway serves as an intermediary for various microservices in a hotel 
     - **Description**: Creates a new room booking.
     - **Request Body**:
         ```json
-        {}
+
+        {
+        "room_number":22,
+        "guest_id": 1,
+        "days_rented": 7,
+        "season": "low",
+        "number_of_guests": 7,
+        "start_date": "2024/10/31"
+        }
+
         ```
     - **Response**:
         - `201 Created`: Room booked successfully.
@@ -161,7 +185,11 @@ This API Gateway serves as an intermediary for various microservices in a hotel 
     - **Description**: Updates room price by type and season.
     - **Request Body**:
         ```json
-        {}
+        {
+            "room_type": "Suite",
+            "season": "low,
+            "daily_price": 1500
+        }
         ```
     - **Response**:
         - `200 OK`: Room price updated.
@@ -174,7 +202,9 @@ This API Gateway serves as an intermediary for various microservices in a hotel 
     - **Description**: Updates the availability of a room.
     - **Request Body**:
         ```json
-        {}
+        {
+        "room_number": 22
+        }
         ```
     - **Response**:
         - `200 OK`: Room availability updated.
@@ -208,7 +238,9 @@ This API Gateway serves as an intermediary for various microservices in a hotel 
     - **Description**: Updates cleaning status of a room.
     - **Request Body**:
         ```json
-        {}
+        {
+        "room_number": 22
+        }
         ```
     - **Response**:
         - `200 OK`: Cleaning status updated.
